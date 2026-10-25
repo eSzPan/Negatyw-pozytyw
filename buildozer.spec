@@ -45,3 +45,8 @@ log_level = 2
 
 # Katalog roboczy
 bin_dir = ./bin
+
+# (str) Path to your source code, relative to the spec file.
+source.dir = .
+
+
