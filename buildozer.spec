@@ -13,7 +13,7 @@ package.domain = org.eszpan
 source.include_exts = py,png,jpg,kv,atlas
 
 # (list) Główne pliki aplikacji
-source.include_dir = 
+source.include_dir = .
 
 # (str) Główny plik startowy (musi nazywać się main.py!)
 source.main_file = main.py
@@ -46,7 +46,5 @@ log_level = 2
 # Katalog roboczy
 bin_dir = ./bin
 
-# (str) Path to your source code, relative to the spec file.
-source.dir = .
 
 
