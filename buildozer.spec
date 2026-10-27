@@ -1,45 +1,53 @@
 [app]
 
-# (str) Tytuł aplikacji (nazwa, którą zobaczysz pod ikoną na telefonie)
+# Tytuł aplikacji (nazwa pod ikoną)
 title = Konwerter Zdjec
 
-# (str) Nazwa pakietu (musi być unikalna, bez spacji i polskich znaków)
+# Nazwa pakietu (bez spacji i polskich znaków)
 package.name = konwerterzdjec
 
-# (str) Domena pakietu
+# Domena pakietu
 package.domain = org.eszpan
 
-# (list) Pliki źródłowe do spakowania
+# Rozszerzenia plików do spakowania
 source.include_exts = py,png,jpg,kv,atlas
 
-# (str) Ścieżka do kodu źródłowego
+# Katalog ze źródłami
 source.dir = .
 
-# (str) Główny plik startowy (musi nazywać się main.py!)
+# Główny plik startowy
 source.main_file = main.py
 
-# (list) Wymagania
-requirements = python3,kivy,pillow
+# Wymagania (numpy jest potrzebne, bo używasz go w kodzie)
+requirements = python3,kivy,pillow,numpy
 
-# (str) Wersja aplikacji
+# Wersja aplikacji
 version = 0.1
 
-# (list) Uprawnienia, których aplikacja będzie żądać na Androida
-android.permissions = WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
+# Uprawnienia
+android.permissions = WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,MANAGE_EXTERNAL_STORAGE
 
-# (str) Orientacja ekranu (portrait = pionowa)
+# Orientacja
 orientation = portrait
 
-# (bool) Czy aplikacja ma być pełnoekranowa
+# Pełny ekran (0 = nie)
 fullscreen = 0
 
-# (str) Obsługiwane architektur systemowe
+# Architektura
 android.archs = arm64-v8a
+
+# --- POPRAWKI POD BUDOWĘ ---
+android.accept_sdk_license = True
+android.skip_update = False
+android.build_tools_version = 34.0.0
+android.api = 34
+android.minapi = 24
+android.ndk = 25b
 
 [buildozer]
 
-# Poziom logów (2 = dużo informacji, przydatne przy szukaniu błędów)
+# Poziom logów
 log_level = 2
 
-# Katalog roboczy
+# Katalog wynikowy
 bin_dir = ./bin
